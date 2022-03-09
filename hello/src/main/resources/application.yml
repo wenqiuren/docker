@@ -2,10 +2,10 @@ spring:
   application:
     name: hello
   datasource:
-    url: jdbc:mysql://81.69.30.150:3307/test?allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://81.69.30.150:3307/test?allowPublicKeyRetrieval=true&allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8
     username: root
     password: qiu123.
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
   redis:
     host: 81.69.30.150
     password: qiu123.
