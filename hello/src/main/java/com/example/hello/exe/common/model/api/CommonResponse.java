@@ -1,4 +1,4 @@
-package com.example.hello.exe.common.api;
+package com.example.hello.exe.common.model.api;
 
 import lombok.Data;
 

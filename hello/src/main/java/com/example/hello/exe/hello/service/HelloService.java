@@ -1,14 +1,12 @@
 package com.example.hello.exe.hello.service;
 
-import com.example.hello.exe.common.api.CommonReq;
-import com.example.hello.exe.common.api.CommonResponse;
+import com.example.hello.exe.common.model.api.CommonReq;
+import com.example.hello.exe.common.model.api.CommonResponse;
 import com.example.hello.exe.common.utils.MqProducerUtils;
 import com.example.hello.exe.hello.domain.dto.PersonDTO;
 import com.example.hello.exe.hello.mapper.HelloMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.BoundListOperations;
-import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 

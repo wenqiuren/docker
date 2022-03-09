@@ -1,7 +1,7 @@
 package com.example.hello.exe.hello.controller;
 
-import com.example.hello.exe.common.api.CommonReq;
-import com.example.hello.exe.common.api.CommonResponse;
+import com.example.hello.exe.common.model.api.CommonReq;
+import com.example.hello.exe.common.model.api.CommonResponse;
 import com.example.hello.exe.hello.domain.dto.PersonDTO;
 import com.example.hello.exe.hello.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
