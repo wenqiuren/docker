@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @Slf4j
@@ -28,10 +29,11 @@ public class HelloService {
         personDTO.setName(commonReq.getSearchKey());
         if(!redisTemplate.hasKey(personDTO.getName())){
             List<PersonDTO> persons = helloMapper.findByCondition(personDTO);
-            redisTemplate.boundListOps(personDTO.getName()).leftPushAll(persons);
+            redisTemplate.boundListOps(personDTO.getName()).leftPush(persons);
+            redisTemplate.expire(personDTO.getName(),1, TimeUnit.HOURS);
             return CommonResponse.success(persons);
         }else {
-            List<PersonDTO> persons = redisTemplate.boundListOps(personDTO.getName()).range(commonReq.getPageIndex()-1, commonReq.getPageSize()-1);
+            List persons = (List) redisTemplate.boundListOps(personDTO.getName()).leftPop();
             return CommonResponse.success(persons);
         }
     }
